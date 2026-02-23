@@ -17,7 +17,6 @@ def main():
     receiver.setReceiverName("PythonOpenCVReceiver")
     receiver.setActiveSender("Pisa")
 
-# IMPORTANT: force sender selection
     sender_name = "Pisa"
     print("Connected to:", sender_name)
 
@@ -45,7 +44,7 @@ def main():
         frame = frame.reshape((h, w, 4))
 
         # OpenGL → OpenCV fixes
-        frame = np.flipud(frame)              # Vertical flip
+        frame = np.flipud(frame)           
         frame = cv2.cvtColor(frame, cv2.COLOR_RGBA2BGR)
 
         # Show in OpenCV
@@ -62,3 +61,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
